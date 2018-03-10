@@ -20,3 +20,8 @@ MATCH (you {name:"Hrizantema"})
 MATCH (expert)-[:WORKED_WITH]->(db:Database {name:"Neo4j"})
 MATCH path = shortestPath( (you)-[:FRIEND*..5]-(expert) )
 RETURN db,expert,path;
+
+
+MATCH (ee:Actor) RETURN ee;
+MATCH (ee:Director) RETURN ee;
+MATCH (n) WHERE n:Actor:Director RETURN n;
